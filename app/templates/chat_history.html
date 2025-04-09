@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat History</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        background-color: #0d0d0d;
+        font-family: "Orbitron", sans-serif;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 40px;
+      }
+
+      .container {
+        width: 50%;
+        max-width: 900px;
+      }
+
+      h2 {
+        color: #66fcf1;
+        text-align: center;
+        font-size: 1.8rem;
+        text-shadow: 0 0 10px #00ffcc;
+        border-bottom: 2px solid #1f1f1f;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+      }
+
+      .list-group {
+        list-style: none;
+        padding: 0;
+      }
+
+      .list-group-item {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        margin-bottom: 15px;
+        padding: 15px 20px;
+        border-radius: 10px;
+        transition: background 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 0 8px rgba(0, 255, 170, 0.2);
+        border: 1px solid #333;
+      }
+
+      .list-group-item:hover {
+        background-color: #292929;
+        transform: scale(1.02);
+        box-shadow: 0 0 12px rgba(0, 255, 170, 0.4);
+      }
+
+      .list-group-item a {
+        color: #1ed760;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      .list-group-item a:hover {
+        text-decoration: underline;
+        color: #66fcf1;
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          width: 90%;
+        }
+
+        h2 {
+          font-size: 1.4rem;
+        }
+
+        .list-group-item {
+          padding: 12px 15px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Chat History</h2>
+      <ul class="list-group">
+        {% for history in histories %}
+        <li class="list-group-item">
+          <a href="{{ url_for('view_chat', history_id=history.id) }}">
+            {{ history.title }} - {{ history.timestamp.strftime('%Y-%m-%d
+            %H:%M:%S') }}
+          </a>
+        </li>
+        {% else %}
+        <li class="list-group-item">No chat history found.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
