@@ -32,7 +32,7 @@ The **Atom Email Assistant** is an intelligent tool designed to enhance email co
 > 📽️ Watch how Atom Email Assistant helps generate intelligent email replies in seconds:
 
 <video width="100%" controls>
-  <source src="[Uploading atom email.mp4…](https://github.com/user-attachments/assets/e044f8de-59cc-4c61-90fc-6dd83c1a39e9)">
+  <source src="https://github.com/user-attachments/assets/e044f8de-59cc-4c61-90fc-6dd83c1a39e9">
   Your browser does not support the video tag.
 </video>
 
