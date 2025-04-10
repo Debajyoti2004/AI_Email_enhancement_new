@@ -1,0 +1,9 @@
+flask
+flask-session
+langchain
+langchain-google-genai
+langchain-cohere
+langchain-core
+langchain-community
+pydantic
+python-dotenv

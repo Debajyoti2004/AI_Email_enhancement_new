@@ -117,7 +117,7 @@ def view_chat(history_id):
     if history.user_id != current_user.id:
         flash("You are not authorized to view this chat.", category='danger')
         return redirect(url_for('chat_history'))
-    return render_template('chat_detail.html', chat=history)
+    return render_template('chat_details.html', chat=history)
 
 @app.route('/chat_page')
 @login_required
